@@ -31,6 +31,13 @@ body{position:relative;}
 /* ===== SCREENS ===== */
 .screen{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .5s ease;overflow-y:auto;padding:0 20px;}
 .screen.active{opacity:1;pointer-events:auto;}
+#result{justify-content:flex-start;padding-top:40px;}
+
+/* Save modal (mobile long-press) */
+.save-modal{position:fixed;inset:0;background:rgba(5,5,14,.92);z-index:99;display:none;align-items:center;justify-content:center;flex-direction:column;padding:24px;}
+.save-modal.open{display:flex;}
+.save-modal img{max-width:86%;max-height:74vh;border-radius:10px;}
+.save-modal-hint{color:#cfc8ba;font-size:13px;margin-top:18px;letter-spacing:.12em;text-align:center;}
 
 /* ===== COVER ===== */
 .cover-inner{text-align:center;max-width:400px;width:100%;}
@@ -139,8 +146,8 @@ body{position:relative;}
 .dim-label.l{color:var(--muted);}
 .dim-track{flex:1;height:4px;background:var(--card2);border-radius:2px;position:relative;overflow:hidden;}
 .dim-fill{height:100%;border-radius:2px;transition:width 1s ease;}
-.dim-fill.left{background:linear-gradient(to left,var(--gold),var(--gold-dim));}
-.dim-fill.right{background:linear-gradient(to right,var(--gold),var(--gold-dim));float:right;}
+.dim-fill.left{background:linear-gradient(to right,var(--gold),var(--gold-dim));}
+.dim-fill.right{background:linear-gradient(to right,var(--gold),var(--gold-dim));}
 
 /* Share */
 .share-section{text-align:center;margin-top:8px;}
@@ -223,6 +230,12 @@ body{position:relative;}
 <!-- ===== RESULT ===== -->
 <div id="result" class="screen">
   <div class="result-wrap" id="resultContent"></div>
+</div>
+
+<!-- ===== SAVE MODAL (mobile) ===== -->
+<div class="save-modal" id="saveModal" onclick="closeSaveModal()">
+  <img id="saveModalImg" alt="人格卡">
+  <div class="save-modal-hint">长按上方图片保存到相册</div>
 </div>
 
 <script>
@@ -967,17 +980,36 @@ async function saveImage(){
   ctx.font=footFont;ctx.fillStyle='#6b6558';
   ctx.fillText('以她之名 · 原创希腊女神测试',W/2,cursor+20);
   try{
-    const link=document.createElement('a');
-    link.download='以她之名-'+g.name+'.png';
-    link.href=canvas.toDataURL('image/png');
-    link.click();
-    if(btn) btn.textContent='已生成 ✓';
+    const dataUrl=canvas.toDataURL('image/png');
+    const isMobile=/iPhone|iPad|iPod|Android|Mobile/i.test(navigator.userAgent)||(navigator.maxTouchPoints>1&&window.innerWidth<=820);
+    if(isMobile){
+      openSaveModal(dataUrl);
+      if(btn) btn.textContent='长按保存 ✓';
+    }else{
+      const link=document.createElement('a');
+      link.download='以她之名-'+g.name+'.png';
+      link.href=dataUrl;
+      link.click();
+      if(btn) btn.textContent='已生成 ✓';
+    }
   }catch(e){
     alert('生成失败，请截图分享');
     if(btn) btn.textContent='保存图片分享';
     return;
   }
   setTimeout(()=>{if(btn) btn.textContent='保存图片分享';},2000);
+}
+
+function openSaveModal(dataUrl){
+  const m=document.getElementById('saveModal');
+  const img=document.getElementById('saveModalImg');
+  if(!m||!img) return;
+  img.src=dataUrl;
+  m.classList.add('open');
+}
+function closeSaveModal(){
+  const m=document.getElementById('saveModal');
+  if(m) m.classList.remove('open');
 }
 
 function copyLink(){
