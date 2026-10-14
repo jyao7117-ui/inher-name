@@ -259,13 +259,13 @@ const QUESTIONS = [
   ]},
   {sec:0, text:"你理想中的早晨，最不可缺少的是——", mode:"single", opts:[
     {text:"一段安静的独处时间，世界还没醒",g:{hestia:3},d:{intro:2}},
-    {text:"一条来自在意的人的消息",g:{demeter:2},d:{feel:2,extra:1}},
+    {text:"一条来自在意的人的消息",g:{demeter:2},d:{feel:2,extra:1,light:1}},
     {text:"一个清晰的今日计划表",g:{hera:3},d:{order:2}},
     {text:"什么都不计划，跟着感觉走",g:{persephone:2,tyche:1},d:{free:2}}
   ]},
   {sec:0, text:"你在朋友聚会中通常——", mode:"single", opts:[
     {text:"安静听大家说话，偶尔插一句精准点评",g:{hestia:2,athena:1},d:{intro:2,logic:1}},
-    {text:"活跃气氛，讲段子带节奏",g:{aphrodite:3},d:{extra:2,feel:1}},
+    {text:"活跃气氛，讲段子带节奏",g:{aphrodite:3},d:{extra:2,feel:1,light:1}},
     {text:"默默观察每个人的状态和微表情",g:{athena:1,hecate:2},d:{intro:1,logic:1,night:1}},
     {text:"找个借口先走了，独处才是充电",g:{artemis:2,hestia:1},d:{intro:2,free:1}}
   ]},
@@ -290,7 +290,7 @@ const QUESTIONS = [
   {sec:0, text:"有人在你面前做了一件明显不对的事，你会——", mode:"single", opts:[
     {text:"当面指出，不当众羞辱但也不装没看见",g:{nemesis:3},d:{logic:1,order:1}},
     {text:"先观察，收集更多信息再决定怎么做",g:{athena:2},d:{logic:2}},
-    {text:"私下找对方聊，想了解背后原因",g:{demeter:2},d:{feel:2}},
+    {text:"私下找对方聊，想了解背后原因",g:{demeter:2},d:{feel:2,light:2}},
     {text:"直接走开，不值得浪费你的时间",g:{artemis:2},d:{free:1}}
   ]},
 
@@ -298,7 +298,7 @@ const QUESTIONS = [
   {sec:1, text:"你认为人和人之间最重要的是——", mode:"single", opts:[
     {text:"真诚，哪怕真话不好听",g:{nemesis:3},d:{logic:1}},
     {text:"边界感，再亲密也要留空间",g:{artemis:2},d:{free:2,intro:1}},
-    {text:"陪伴，在就够了",g:{demeter:3},d:{feel:2}},
+    {text:"陪伴，在就够了",g:{demeter:3},d:{feel:2,light:1}},
     {text:"共振，灵魂频率要对",g:{persephone:2,tyche:1},d:{night:1,feel:1}}
   ]},
   {sec:1, text:"面对一个重大决定，你更依赖——", mode:"single", opts:[
@@ -310,11 +310,11 @@ const QUESTIONS = [
   {sec:1, text:"你对「规则」的态度是——", mode:"single", opts:[
     {text:"规则是必要的，但可以优化",g:{hera:2,athena:1},d:{order:2,logic:1}},
     {text:"规则就是用来打破的",g:{eris:3},d:{free:3}},
-    {text:"规则不重要，人和感受才重要",g:{demeter:2,aphrodite:1},d:{feel:2}},
+    {text:"规则不重要，人和感受才重要",g:{demeter:2,aphrodite:1},d:{feel:2,light:1}},
     {text:"我有自己的一套规则",g:{athena:1,hecate:2},d:{logic:1,intro:1,night:1}}
   ]},
   {sec:1, text:"你最容易被什么打动？", mode:"single", opts:[
-    {text:"一个意料之外的温柔举动",g:{demeter:3},d:{feel:3}},
+    {text:"一个意料之外的温柔举动",g:{demeter:3},d:{feel:3,light:2}},
     {text:"一段精心设计的仪式感",g:{hera:2},d:{order:1,feel:1}},
     {text:"一个人独处时展现出的真实",g:{hestia:3},d:{intro:2}},
     {text:"一个打破常规的勇敢选择",g:{eris:2,nemesis:1},d:{free:2}}
@@ -322,7 +322,7 @@ const QUESTIONS = [
   {sec:1, text:"你在团队里通常扮演什么角色？", mode:"single", opts:[
     {text:"决策者，关键时刻拍板的人",g:{hera:3},d:{order:2,logic:1}},
     {text:"幕后支持者，确保一切运转顺畅",g:{hestia:2},d:{intro:2}},
-    {text:"灵魂人物，凝聚团队的那一个",g:{demeter:2,aphrodite:1},d:{feel:2,extra:1}},
+    {text:"灵魂人物，凝聚团队的那一个",g:{demeter:2,aphrodite:1},d:{feel:2,extra:1,light:1}},
     {text:"挑战者，提出别人不敢说的问题",g:{eris:2,nemesis:1},d:{free:2}}
   ]},
   {sec:1, text:"你对「成功」的定义最接近——", mode:"single", opts:[
@@ -341,7 +341,7 @@ const QUESTIONS = [
     {text:"时间暂停——随时按下暂停键",g:{hestia:3},d:{intro:2,free:1}},
     {text:"读心术——知道所有人的真实想法",g:{hecate:3},d:{logic:1,night:2}},
     {text:"瞬间移动——想去哪就去哪",g:{artemis:3},d:{free:3}},
-    {text:"治愈——让受伤的人好起来",g:{demeter:3},d:{feel:3}}
+    {text:"治愈——让受伤的人好起来",g:{demeter:3},d:{feel:3,light:3}},
   ]},
 
   // ========== Section 2: 内心深处 ==========
@@ -358,10 +358,10 @@ const QUESTIONS = [
     {text:"一段关系——那个人面前你可以不设防",g:{demeter:3},d:{feel:2}}
   ]},
   {sec:2, text:"你对「死亡」的看法最接近——", mode:"single", opts:[
-    {text:"一个自然的章节，不需要恐惧",g:{demeter:1,persephone:2},d:{feel:1}},
+    {text:"一个自然的章节，不需要恐惧",g:{demeter:1,persephone:2},d:{feel:1,light:1}},
     {text:"一个未解之谜，值得认真思考",g:{hecate:3},d:{night:3}},
     {text:"暂时不想面对，先好好活着",g:{artemis:2},d:{free:2}},
-    {text:"它让「此刻」变得更珍贵",g:{hestia:2},d:{intro:1,feel:1}}
+    {text:"它让「此刻」变得更珍贵",g:{hestia:2},d:{intro:1,feel:1,light:1}},
   ]},
   {sec:2, text:"你的内心深处，有一块从未被触碰的地方，你觉得那里是——", mode:"single", opts:[
     {text:"一片安静的湖，很深但很平",g:{hestia:3},d:{intro:3}},
@@ -411,22 +411,22 @@ const QUESTIONS = [
     {text:"安静了很久之后，突然开口的那一刻",g:{hestia:3},d:{intro:2}},
     {text:"被逼到墙角、退无可退的时候",g:{nemesis:3},d:{logic:1,order:1}},
     {text:"独自一人、没有任何人看着你的时候",g:{artemis:3},d:{free:2,intro:1}},
-    {text:"和某个人在一起——那个人让你完整",g:{demeter:3},d:{feel:3}}
+    {text:"和某个人在一起——那个人让你完整",g:{demeter:3},d:{feel:3,light:2}},
   ]},
   {sec:3, text:"你选一样东西随身携带——", mode:"single", opts:[
     {text:"一面盾——保护自己和身边的人",g:{hera:3},d:{order:2}},
     {text:"一把弓——远距离、精确打击",g:{artemis:3},d:{free:2,logic:1}},
     {text:"一盏灯——照亮黑暗中看不见的路",g:{hecate:3},d:{night:3}},
-    {text:"一根橄榄枝——你相信和平是可能的",g:{demeter:3},d:{feel:2}}
+    {text:"一根橄榄枝——你相信和平是可能的",g:{demeter:3},d:{feel:2,light:3}},
   ]},
   {sec:3, text:"你希望被人记住的是——", mode:"multi", maxPick:2, opts:[
     {text:"你做过的事——那些实实在在的改变",g:{hera:2,nemesis:1},d:{order:1,logic:1}},
-    {text:"你给过的感觉——温暖、安心、被理解",g:{demeter:3},d:{feel:3}},
+    {text:"你给过的感觉——温暖、安心、被理解",g:{demeter:3},d:{feel:3,light:3}},
     {text:"你的独特——世界上再没有第二个你",g:{artemis:2},d:{free:2}},
     {text:"你的深度——那些别人看不到的东西",g:{hecate:2,persephone:1},d:{night:2,intro:1}}
   ]},
   {sec:3, text:"如果明天一切归零，你最想做的第一件事是——", mode:"single", opts:[
-    {text:"去见一个人，告诉ta一些一直没说的话",g:{demeter:3},d:{feel:3}},
+    {text:"去见一个人，告诉ta一些一直没说的话",g:{demeter:3},d:{feel:3,light:2}},
     {text:"去一个地方——那个你心里放了很久的地方",g:{artemis:3},d:{free:2}},
     {text:"开始写/画/创造，把脑海里的东西变成真的",g:{hestia:2,persephone:1},d:{intro:1,feel:1}},
     {text:"什么都不做——先感受一下「重新开始」的感觉",g:{persephone:2,tyche:1},d:{night:1,free:1}}
